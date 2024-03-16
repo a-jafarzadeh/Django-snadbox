@@ -33,6 +33,6 @@ jobs:
       env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
           WEBHOOK_USERNAME: ${{ secrets.WEBHOOK_USERNAME }}
-          WEBHOOK_PASSWORD: ${{ secrets.WEBHOOK_PASSWORD }}
+          WEBHOOK_PASSWORD: ${{ secrets.WEBHOOK_PASSWORD }} 
       run: |
         curl -X POST -H "Content-Type: application/json" -d '{"username":"${WEBHOOK_USERNAME}", "password": "${WEBHOOK_PASSWORD}"}' $WEBHOOK_URL
