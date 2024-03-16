@@ -28,3 +28,7 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+    - name: Update to server
+      if: github.ref == 'refs/heads/dev'
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"username":"${WEBHOOK_USERNAME}", "password": "${WEBHOOK_PASSWORD}"}' $WEBHOOK_URL
