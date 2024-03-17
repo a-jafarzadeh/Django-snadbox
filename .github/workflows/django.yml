@@ -36,4 +36,4 @@ jobs:
           WEBHOOK_PASSWORD: ${{ secrets.WEBHOOK_PASSWORD }} 
       run: |
         echo ${WEBHOOK_USERNAME} = $WEBHOOK_USERNAME ----- ${WEBHOOK_PASSWORD} = $WEBHOOK_PASSWORD
-        curl -X POST -H "Content-Type: application/json" -d '{"username":"${WEBHOOK_USERNAME}", "password": "$WEBHOOK_PASSWORD"}' $WEBHOOK_URL
+        curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"${WEBHOOK_USERNAME}\", \"password\": \"$WEBHOOK_PASSWORD\"}" $WEBHOOK_URL
